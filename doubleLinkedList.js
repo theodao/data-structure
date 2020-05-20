@@ -49,6 +49,11 @@ class SelfImplementDoubleLinkedList {
   remove(index) {
     let currentNode = this.head;
 
+    if (index === 0) {
+      currentNode.next.previous = null;
+      this.head = currentNode.next;
+    }
+
     if (currentNode !== null && (i < index)) {
       currentNode = currentNode.next;
       i++;
