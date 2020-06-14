@@ -1,29 +1,29 @@
 class SelfImplementedCircularStack {
   /**
-   * 
+   *
    * @param {number} size the size of the stack
    */
   constructor(size) {
-    this.size = size;
-    this.data = [];
-    this.head = 0;
-    this.tail = 0;
+    this.size = size
+    this.data = []
+    this.head = 0
+    this.tail = 0
   }
 
   /**
    * Check if the stack is empty or not
-   * @returns {boolean} 
+   * @returns {boolean}
    */
   isEmpty() {
-    return this.head === this.tail;
+    return this.head === this.tail
   }
-  
+
   /**
    * Check if the stack is full or not
    * @returns {boolean}
    */
   isFull() {
-    return this.head === (this.tail + 1) % this.size;
+    return this.head === (this.tail + 1) % this.size
   }
 
   /**
@@ -31,7 +31,7 @@ class SelfImplementedCircularStack {
    * Return -1 if not found
    */
   Front() {
-    return this.isEmpty() ? -1 : this.data[this.head];
+    return this.isEmpty() ? -1 : this.data[this.head]
   }
 
   /**
@@ -39,7 +39,7 @@ class SelfImplementedCircularStack {
    * Return -1 if not found
    */
   Rear() {
-    return this.isEmpty() ? -1 : this.data[this.tail];
+    return this.isEmpty() ? -1 : this.data[this.tail]
   }
 
   /**
@@ -47,12 +47,12 @@ class SelfImplementedCircularStack {
    */
   enQueue(value) {
     if (this.isFull()) {
-      return false;
-    };
+      return false
+    }
 
-    this.data[this.tail] = value;
-    this.tail = (this.tail + 1) % this.size;
-    return true;
+    this.data[this.tail] = value
+    this.tail = (this.tail + 1) % this.size
+    return true
   }
 
   /**
@@ -60,15 +60,13 @@ class SelfImplementedCircularStack {
    */
   deQueue() {
     if (this.isEmpty()) {
-      return false;
+      return false
     }
 
-    this.data[this.head] = value;
-    this.head = (this.head + 1) % this.size;
-    return true;
+    this.data[this.head] = value
+    this.head = (this.head + 1) % this.size
+    return true
   }
-
-
 }
 
-const circurlarStack = new SelfImplementDoubleLinkedList(3);
+const circurlarStack = new SelfImplementDoubleLinkedList(3)
